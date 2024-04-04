@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: learn-argocd
-  Namespace: learn-argocd
+  namespace: learn-argocd
 spec:
   selector:
     matchLabels:
