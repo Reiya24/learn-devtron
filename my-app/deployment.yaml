@@ -1,0 +1,25 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: learn-argocd
+  Namespace: learn-argocd
+spec:
+  selector:
+    matchLabels:
+      app: learn-argocd
+  template:
+    replicas: 1
+    selector:
+      matchLabels:
+        app: learn-argocd
+    template:
+      metadata:
+        labels:
+          app: learn-argocd
+      spec:
+        containers:
+        - name: learn-argocd
+          image: asia-southeast1-docker.pkg.dev/reiya-playground/registry-playground/argocd
+          ports:
+            - containerPort: 80
